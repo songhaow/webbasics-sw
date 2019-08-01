@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>001-Zeng-class-025</title>
+    <style>
+    .mytable, .mytable tr, .mytable td{
+      border: 1px solid black;
+    }
+    .mytable{
+      background: radial-gradient(circle, #999, #842);
+      /* background-color: white; */
+      border-collapse: collapse;
+    }
+    .mytable td{
+      width: 100px;
+      text-align: center;
+    }
+    </style>
+
+    <h5>Zeng Class 025 - Continue of 24, sorting</h5>
+</head>
+
+    <!-- 0    1   2   3   4
+0
+1
+2
+3
+4 -->
+
+<body>
+
+<script>
+
+var m = [];
+for (var i = 0; i < 6; i++){
+   m[i] = [];
+   for (var j = 0; j < 9; j++){
+      m[i][j] = 0;
+   }
+}
+
+printing:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+document.write("<br>");
+
+var rows = ['Product', 'Monday', 'Tusday', 'Wendsday', 'Thursday', 'Friday', 'Surtuday', 'Sunday', 'Sum'];
+for (var j = 0; j < 10; j++){
+  m[0][j] = rows[j];
+}
+
+var cols = ['Product', 'A', 'B', 'C', 'D', 'Sum'];
+for (var i = 1; i < 6; i++){
+  m[i][0] = cols[i];
+}
+
+for (j = 1; j < 9; j++){
+  m[5][j] = 0;
+}
+
+for(var i = 1; i < 5; i++){
+  for(var j = 1; j < 8; j++){
+     // random nuber from 100 to 500
+    m[i][j] = Math.floor(Math.random()*401+100);
+  }
+  m[i][8] = 0;
+}
+
+printing:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+document.write("<br>");
+
+for (var i = 1; i < 5; i++){
+  for (var j = 1; j < 8; j++){
+    m[i][8] = m[i][8] + m[i][j];
+    m[5][j] = m[5][j] + m[i][j]
+  }
+  m[5][8] = m[5][8]+ m[i][8]
+}
+
+printing:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+document.write("<br>");
+
+// Reordering on total
+for(var i = 1; i < 4; i++){
+  for(var j = i + 1; j < 5; j++){
+    if(m[i][8] < m[j][8]){
+      var t = [];
+      t = m[i];
+      m[i] = m[j];
+      m[j] = t
+    }
+  }
+}
+
+printing:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+
+</script>
+</body>
+</html>

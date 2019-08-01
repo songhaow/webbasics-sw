@@ -1,0 +1,39 @@
+ {% extends 'layout.html' %}
+      {% block body %}
+      <h2>Find each digit for a three digit integer</h2>
+      Please type a 3 digits number: <input id = 'inputnum'><br><br>
+
+      The number: <div class = 'ans' id = 'num'></div><br>
+      First-digit: <div class = 'ans' id = 'ans1'></div><br>
+      Second-digit: <div class = 'ans' id = 'ans2'></div><br>
+      Thrid-digit: <div class = 'ans' id = 'ans3'></div><br>
+
+      Sum of digits: <div class = 'ans' id = 'ans4'></div><br>
+
+    <!-- <script type="text/javascript" src="js/info-class-01.js"></script> -->
+
+    <script type="text/javascript">
+       var number = 87;
+
+        document.getElementById("inputnum").onchange = function(event) {
+        number = event.target.value;
+        console.log('i have been clicked', number);
+
+        var number1 = Math.floor(number/100);
+        var number2 = (Math.floor(number/10))%10;
+        var number3 = number % 10;
+
+        console.log(number,number1,number2,number3);
+
+        document.getElementById('num').innerHTML = number;
+        document.getElementById('ans1').innerHTML = number1;
+        document.getElementById('ans2').innerHTML = number2;
+        document.getElementById('ans3').innerHTML = number3;
+
+        var number4 = number1+number2+number3;
+        document.getElementById('ans4').innerHTML = number4;
+      }
+
+    </script>
+
+  {% endblock %}

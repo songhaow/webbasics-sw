@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <h2>Display an 1D Array</h2>
+  <button type = 'button' onclick = "display()">Disply</button>
+
+<script>
+
+      function display(){
+        var nArray = [];
+        for (var i = 0; i <= 100; i++){
+          nArray[i] = i;
+        }
+
+        document.write('1D array:' + '<br>');
+
+        for (var i=0; i<100; i++){
+          var n = i+1;
+          document.write(nArray[n]);
+          if (n%10 === 0){
+            document.write(", <br>");
+          }
+          else{
+            document.write(',');
+          }
+        }
+
+        document.write('<hr>');
+        document.write('New serie:'+'<br>');
+        // exchage two numbers
+        for (var i = 0; i <= 49; i++){
+          var T;
+          T = nArray[i];
+          nArray[i] = nArray[100 - i];
+          nArray[100 - i] = T;
+        }
+
+        for (var i = 0; i < 100; i++){
+          var n = i + 1 ;
+          document.write(nArray[n]);
+          if (n%10 === 0){
+            document.write(', <br>');
+          }
+          else{
+            document.write(',');
+          }
+        }
+
+      }
+
+</script>
+
+{% endblock %}

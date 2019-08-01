@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>info-class-17</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/zeng-class.css"> -->
+</head>
+
+<body>
+<!-- // sortering -->
+  Original series:<p id="demo_origin"></p>
+  <button onclick="sortering01()">Sortering</button><br><br>
+  After sortering:<p id="demo_after"></p>
+
+<script>
+  // A 1D array: 
+  var n = [90, 6, 15, 65, 32, 43, 50, 4, 102];
+  document.getElementById("demo_origin").innerHTML = n;
+  
+  function sortering01(){
+    for (var i = 0; i < n.length-1; i++){
+      var t = i;
+      for (var j = i+1; j <= n.length-1; j++){
+        if (n[t] > n[j]) {
+          t = j
+          }
+      }
+        var m;
+        m = n[t];
+        n[t] = n[i];
+        n[i] = m;
+      }
+   document.getElementById("demo_after").innerHTML = n;
+  }
+
+  // function sortering01(){
+  //   for (var i = 0; i < n.length-1; i++){
+  //     for (var j = i+1; j <= n.length-1; j++){
+  //       if (n[i] < n[j]) {
+  //         var m;
+  //         m = n[j];
+  //         n[j] = n[i];
+  //         n[i] = m;
+  //       }
+  //     }
+  // }
+  //  document.getElementById("demo_after").innerHTML = n;
+  // }
+
+  // function sortering01(){ //bubble sortering method (youtube)
+  //   for (var i = 0; i <n.length-1; i++){
+  //     for (var j = 0; j <= n.length-i; j++){
+  //       if (n[j] > n[j+1]) {
+  //         var m;
+  //         m = n[j];
+  //         n[j] = n[j+1];
+  //         n[j+1] = m;
+  //       }
+  //     }
+  // }
+  //  document.getElementById("demo_after").innerHTML = n;
+  // }
+
+  // function sortering01(){
+  //   n.sort(function(a, b){return a - b});
+  //   document.getElementById('demo_after').innerHTML = n;
+  // }
+
+</script>
+</body>
+</html>

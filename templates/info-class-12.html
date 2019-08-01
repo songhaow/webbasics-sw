@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<!-- <style>
+  table{
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    background-color: #888888;
+    margin:0 auto;
+  }
+  table,tr,td{
+    flex:none;
+    border: 1px solid black;
+  }
+  td{
+    flex:none;
+    width: 80px;
+    text-align: center;
+  }
+</style>
+  </head>
+
+  <body> -->
+
+    <h2>Automatically build a table</h2>
+    <button class = 'button1' onclick = "table()">Click to plot a table</button><br><br>
+    <table id = "mytable"></table>
+
+  <script type="text/javascript">
+      var oForm, number;
+      oForm = document.forms['myform'];
+
+      //<!-- Multipal loops -->
+      var i=1, s;
+
+      function table(){
+        var html = "";
+        for (var i = 1; i <= 25; i++){
+          if(i%5 == 1){
+            html = html + "<tr>";
+          }
+          html = html + "<td>" + i + "</td>";
+          if (i%5 == 0){
+            html = html + "</tr>";
+          }
+        }
+      document.getElementById("mytable").innerHTML=(html);
+      }
+  
+  </script>
+
+{% endblock %}

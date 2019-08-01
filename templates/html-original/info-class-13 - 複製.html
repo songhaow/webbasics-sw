@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <title>info-class-013</title>
+
+<style>
+
+  table{
+    border-collapse: collapse;
+    background-color: #EEE4E1;
+    margin:20 auto;
+  }
+
+  #table, #table tr, #table td{
+    border: 1px solid black;
+  }
+
+  #table td{
+    width: 60px;
+    text-align: center;
+  }
+
+  .box{
+    min-width: 400px;
+    padding: 20px;
+    background-color: #FFC300;
+    display: inline-block;
+  }
+
+  button{
+    margin-left: 20px;
+  }
+
+</style>
+  </head>
+
+  <body>
+    <!-- Automatically calculate the collums -->
+    <p>Automatically calculate the collums</p>
+    <form name = 'myform'>
+       Number of Collums: <input type='text' id='fnotext' value = ' '>
+       <button type = 'button' onclick = "disply()">Disply table</button>
+    </form>
+
+      <!-- <fieldset class ='box'> -->
+      <div>
+         <legend id='fno'> Number of Collums </legend>
+         <table id='table'></table>
+      </div>
+      <!-- </fieldset> -->
+
+  </body>
+
+  <script type="text/javascript" src="js/info-class-13.js"></script>
+
+</html>

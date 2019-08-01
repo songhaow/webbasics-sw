@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h2>Basic Calculation for 2 numbers</h2>
+
+<!-- add, subtact, multiply, divide -->
+    <form class = 'box1' id='myform' action = " " method = 'POST'>
+      Number-01: <input class = 'box1' type = 'text' name='number01'><br>
+      Number-02: <input class = 'box1' type = 'text' name='number02'><br>
+    </form><br>
+
+    Result: <div class = 'ans' id = 'answer'></div><br><hr>
+    <button class = 'button1' onclick = "sum()">Sumation</button>
+    <button class = 'button1' onclick = "sub()">Subtraction</button>
+    <button class = 'button1' onclick = "mul()">Multiply</button>
+    <button class = 'button1' onclick = "div()">Devide</button>
+
+
+  <script type="text/javascript">
+  
+    var oForm, n1,n2,answer;
+
+    oForm = document.forms['myform'];
+
+    function sum(){
+      n1 = oForm.elements['number01'].value;
+      n2 = oForm.elements['number02'].value;
+      answer = parseFloat(n1) + parseFloat(n2);
+      answer = parseFloat(answer.toFixed(3));
+      document.getElementById("answer").innerHTML = (answer);
+    }
+
+    function sub(){
+      n1 = oForm.elements['number01'].value;
+      n2 = oForm.elements['number02'].value;
+      answer = parseFloat(n1) - parseFloat(n2);
+      answer = parseFloat(answer.toFixed(3));
+      document.getElementById("answer").innerHTML = (answer);
+    }
+
+    function mul(){
+      n1 = oForm.elements['number01'].value;
+      n2 = oForm.elements['number02'].value;
+      answer = parseFloat(n1) * parseFloat(n2);
+      answer = parseFloat(answer.toFixed(3));
+      document.getElementById("answer").innerHTML = (answer);
+    }
+
+    function div(){
+      n1 = oForm.elements['number01'].value;
+      n2 = oForm.elements['number02'].value;
+      answer = parseFloat(n1) / parseFloat(n2);
+      answer = parseFloat(answer.toFixed(3));
+      document.getElementById("answer").innerHTML = (answer);
+    }
+
+  </script>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>info-class-018</title>
+</head>
+
+<body>
+<!-- // Wash cards-->
+  Original series:<p id="demo_origin"></p>
+  <button onclick="wash01()">Wash</button><br><br>
+  After wash:<p id="demo_after"></p>
+
+<script>
+   var cards = [];
+   var howmany = 10;
+   for (var i = 0; i < howmany; i++){
+     cards[i] = i+1;
+   }
+   document.getElementById("demo_origin").innerHTML = cards;
+
+   function wash01(){
+     for (var i = 0; i< cards.length; i++){
+       var n = Math.floor(Math.random()*howmany);
+       var t;
+       t = cards[i];
+       cards[i] = cards[n];
+       cards[n] = t;
+     }
+     document.getElementById("demo_after").innerHTML = cards;
+   }
+
+</script>
+</body>
+</html>

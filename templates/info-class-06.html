@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h2>Calculations for Electricity Bill based on hours</h2>
+
+<!-- Calculations for Electricity Bill -->
+  <div class = box>
+
+    <form class = 'box1' id='myform' action = " " method = 'POST'>
+      Number of hrs: <input class = 'input01' type = 'text' name='hours'><br>
+      Total bill: <div class = 'ans' id = 'total'></div><br>
+    </form><br>
+
+    <button class = 'button1' onclick = "totalbill()">Click for bill</button>
+
+  </div>
+
+  <script type="text/javascript">
+  // Electricity bill calculation
+    // <30 $10/hr
+    // <=70 $13/hr
+    // <=120 &15/hr
+    // <=200 $20/hr
+    // >= 200 $30/hr
+
+    var oForm, hours, bill;
+    oForm = document.forms['myform'];
+
+    // Switch function:
+    function totalbill(){
+      hours = oForm.elements['hours'].value;
+      console.log('hours: ', hours);
+      if (hours<=30){
+        bill = hours * 10;
+      }
+      else if (hours<=70) {
+        bill = 300 + 420 + (hours - 30) *13;
+      }
+      else if (hours<=120) {
+        bill = 300 + 420 + 750 + (hours - 70) *15;
+      }
+      else if (hours<=200) {
+        bill = 300 + 420 + 750 + 1600 + (hours - 120) *20;
+      }
+      else {
+        bill = 300 + 420 + 750 +1600 + (hours - 200) *30;
+      }
+      bill = parseFloat(bill.toFixed(3));
+      document.getElementById("total").innerHTML = ' ' + (bill) + ' NTD';
+    }
+
+  </script>
+
+{% endblock %}

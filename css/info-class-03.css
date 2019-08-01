@@ -1,0 +1,17 @@
+html,body{
+  color: black;
+  font-size: 20px
+}
+p{
+  color: blue;
+  font-size: 25px;
+}
+#amount{
+  color: #555;
+  font-size: 20px;
+}
+#total{
+  color: #11C177;
+  font-size: 20px;
+  display: inline-block;
+}

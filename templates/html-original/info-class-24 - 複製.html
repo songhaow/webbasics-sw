@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>info-class-24</title>
+    <style>
+       .mytable, .mytable tr, .mytable td{
+         border: 1px solid black;
+       }
+       .mytable{
+         background: radial-gradient(circle, #999, #842);
+         /* background-color: white; */
+         border-collapse: collapse;
+       }
+       .mytable td{
+         width: 80px;
+         text-align: center;
+       }
+    </style>
+
+    <h5>2D matrix manipulation</h5>
+</head>
+
+    <!-- Monday Tusday Wendsday Thursday Friday Surtuday Sunday
+A
+B
+C
+D -->
+
+<body>
+
+<script>
+// Initial 2D matrix with zeros
+var m = [];
+for (var i = 0; i < 6; i++){
+   m[i] = [];
+   for (var j = 0; j < 9; j++){
+      m[i][j] = 0;
+   }
+}
+
+// Printing 1:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+document.write("<br>");
+
+
+var rows = ['Product', 'Monday', 'Tusday', 'Wendsday', 'Thursday', 'Friday', 'Surtuday', 'Sunday', 'Sum'];
+for (var j = 0; j < 10; j++){
+  m[0][j] = rows[j];
+}
+
+var cols = ['Product', 'A', 'B', 'C', 'D', 'Sum'];
+for (var i = 1; i < 6; i++){
+  m[i][0] = cols[i];
+}
+
+for (j = 1; j < 9; j++){
+  m[5][j] = 0;
+}
+
+for(var i = 1; i < 5; i++){
+  for(var j = 1; j < 8; j++){
+     // random nuber from 10,000 to 30,000
+    m[i][j] = Math.floor(Math.random()*20001+10000);
+  }
+  m[i][8] = 0;
+}
+
+// Printing 2:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+document.write("<br>");
+
+for (var i = 1; i < 5; i++){
+  for (var j = 1; j < 8; j++){
+    m[i][8] = m[i][8] + m[i][j];
+    m[5][j] = m[5][j] + m[i][j]
+  }
+  m[5][8] = m[5][8]+ m[i][8]
+}
+
+// Printing 3:
+document.write("<table class='mytable'>");
+for (var i = 0; i < 6; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 9; j++){
+    document.write("<td>" + m[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+
+</script>
+</body>
+</html>

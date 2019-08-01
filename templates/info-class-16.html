@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <h2>Generate a set of random numbers</h2>
+
+<script>
+
+      var m = [];
+      var howmany = 50;
+      var sum = 0;
+      var max, min, mean;
+
+      // Generate a series random number
+      for (var i = 0; i < howmany; i++) {
+          m[i] = Math.floor(Math.random()*51);
+      }
+
+      // Print the random number series
+      for (var i = m.length-1; i >= 0; i--){
+          document.write(m[i]);
+          if (i % 10 === 0){
+              document.write(', <br>');
+            }
+            else{
+              document.write(',');
+            }
+      }
+
+      // Find max, min, mean value
+      var max, min, mean;
+      for (var i = 0; i < howmany; i++){
+          sum = sum + m[i];
+      }
+        document.write("<br>");
+        document.write('Total: ' + sum + '<br>');
+        max = Math.max.apply(null, m);
+        min = Math.min.apply(null, m);
+        mean = sum/m.length;
+
+        // const max = values => values.reduce((max, value) => Math.max(max, value), 0);
+        var max01 = m => values.reduce((max, m) => Math.max(max, m), 0);
+        console.log('max: ', max01);
+            // const max = function average(value){
+            //   var maxNumber =  Math.max(value);
+            //   return maxNumber
+            // }
+            
+        document.write('max: '+ max + '<br>');
+        document.write('mean: '+ mean + '<br>');
+        document.write('min: '+ min);
+
+</script>
+
+{% endblock %}

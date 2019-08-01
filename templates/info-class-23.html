@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Build a 2D matrix</h2>
+<!-- var m = [];
+m[0] = [1, 6, 11, 16, 21];
+m[1] = [2, 7, 12, 17, 22];
+m[2] = [3, 8, 13, 18, 23];
+m[3] = [4, 9, 14, 19, 24];
+m[4] = [5, 10, 15, 20, 25];
+...... -->
+
+<script>
+
+var m = [];
+for(var i = 0; i < 5; i++){
+  m[i] = [];
+  for(var j = 0; j < 5; j++){
+    m[i][j] = i * 5 + j + 1;
+  }
+}
+
+// printing:
+for (var i = 0; i < 5; i++){
+  for(var j = 0; j < 5; j++){
+    document.write(m[j][i] + '  ');
+  }
+    document.write('<br>');
+}
+
+</script>
+{% endblock %}

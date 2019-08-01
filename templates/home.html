@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+<style>
+.navbar {
+  margin-bottom:0;
+  border-radius:0;
+  background-color: #5E4485;
+  color: #FFF;
+  padding: 1% 0;
+  font-size: 1.2em;
+  border:0;
+  }
+.navbar-brand {
+  float: left;
+  min-height:55px;
+  padding: 0 15px 5px;
+  }
+.navbar-inverse .navbar-nav .article a, .navbar-inverse .navbar-nav .article
+a:foucus,.navbar-inverse .navbar-nav .article a:hover {
+  color: #FFF;
+  background-color: #5E4485;
+}
+</style>
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>商品開發與科技資訊</h1>
+    <h2>Information Technology for Product Development</h2>
+    <p class="lead">王松浩博士, 國立台南大學機電系統研究所, 108-01課程大綱</p>
+    <p class="lead">Songhao Wang PhD, NTNU, Institute of Mechatronics System</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% endif %}
+  </div>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" datas-lide-to="1"></li>
+      <li data-target="#myCarousel" datas-lide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="{{url_for('static', filename='web-02.png')}}" style="width:1024px;height:700px;"/>
+        <div class="carousel-caption">
+          <h1><span class="glyphicons glyphicons-ring"></span>Welcome to my class</h1>
+          <p><span class="glyphicons glyphicons-ring"></span>We are learning together</p>
+          <br>
+          <button type="button" class="btn btn-default">Get Started</button>
+        </div>
+      </div> <!---End Active -->
+        <div class="item">
+          <img src="{{url_for('static', filename='web-03.png')}}" style="width:1024px;height:700px;"/>
+        </div>
+        <div class="item">
+          <img src="{{url_for('static', filename='web-04.png')}}" style="width:1024px;height:700px;"/>
+        </div>
+        <div class="item">
+          <img src="{{url_for('static', filename='web-05.bmp')}}" style="width:1024px;height:700px;"/>
+        </div>
+        <div class="item">
+          <img src="{{url_for('static', filename='web-07.bmp')}}" style="width:1024px;height:700px;"/>
+        </div>
+        <div class="item">
+          <img src="{{url_for('static', filename='web-08.bmp')}}" style="width:1024px;height:700px;"/>
+        </div>
+        <div class="item">
+          <img src="{{url_for('static', filename='web-09.bmp')}}" style="width:1024px;height:700px;"/>
+        </div>
+    </div>
+    <!--- Start Slideer -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only"<Previous></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only"<Next></span>
+    </a>
+</div> <!---End Slider -->
+
+
+<div class="container">
+    <div class="row">
+
+          <div class="col-sm-4">
+            <h3>教學目標</h3>
+            <p>當今產品開發絕對離不開互聯網和物聯網，對於機電或系統工程師來說，如果掌握一些基本的相關知識及技能，將會是如虎添翼。 當他（她）在搜索網頁時，如果有可能，當然想知道其基本組成原理及其背後的支撐。當他想要自己創業或開發推銷自己的產品，如果有可能，也當然想隨手建立一個屬於自己的網頁。 “世界是平的”，平就平在訊息及數據的即時互通和交流。因此，資訊就是金錢，資訊就是資源。而資訊的獲得及散佈亦是並且越來越將是商品開發的極重要手段和技能。 </p>
+            <p>本課程將針對商品開發中將遇到和用到的互聯網及數據庫（大數據），比較系統地對學生進行基礎的介紹及訓練。 透過本課程，使學生能夠對互動式網頁的結構具有基本的瞭解及掌握。</p>          
+          </div>
+
+          <div class="col-sm-4">
+            <h3>課程內容</h3>
+            <ul>
+              <li>除了講解及討論商品開發與資訊科技的關係之外，會對相關電腦程式進行基本介紹及實做練習</li>
+              <li>軟體： Javascript, HTML, CSS, Python 等， 編輯軟體則會使用Visual Studio Code。</li>
+              <li>同時也會對相關數據庫及雲端大數據儲存基礎進行本介紹, 包括: SQL, AWS等。</li>
+              <li>此外還會涉及到商業化網頁設計程式及模組的應用 例如 Webflow, Wix 等。</li>
+              <li>課程最後需要同學有能力建立簡單的互動式網頁。</li>
+              <li>並且鼓勵學生在網上大學如edX, Codecademy, datacamp等註冊並學習至少一部分課程, 培養永續學習的精神。</li>
+            </ul>
+          </div>
+
+          <div class="col-sm-4">
+            <h3>課程安排</h3>
+            <ol>
+                <li>綜述,Introduction</li>
+                <li>基本程式架構及練習-01, HTML, CSS,</li>
+                <li>前端基本程式架構及練習-02, Bootstrap</li>
+                <li>前端基本程式架構及練習-03, Javascript</li>
+                <li>前端基本程式架構及練習-04, Javascript</li>
+                <li>前端基本程式架構及練習-05, Javascript</li>
+                <li>前端基本程式架構及練習-06, Javascript</li>
+                <li>前端基本程式架構及練習-07, Python, Flask</li>
+                <li>網站開發 - 雲端主機教學, Heroku</li>
+                <li>商業網站建立工具使用及練習-01，Wix</li>
+                <li>商業網站建立工具使用及練習-02，Wix</li>
+                <li>商業網站建立工具使用及練習-01，Webflow</li>
+                <li>商業網站建立工具使用及練習-02，Webflow</li>
+                <li>雲端計算介紹-01, AWS, Alibaba cloud</li>
+                <li>雲端計算介紹-02, AWS, Alibaba cloud</li>
+                <li>網上大學介绍,edX, Codecademy</li>
+                <li>課程專案報告與討論, Course project</li>
+                <li>期末考, Final</li>
+            </ol> 
+          </div>
+
+    </div>
+  </div>
+
+{% endblock %}

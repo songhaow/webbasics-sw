@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<h2>Wash & distribut cards</h2>
+  <!-- 0 A: 0 1 2 3 4 5 6 7 8 9 10 11 12
+       1 B: 13                        25
+       2 C: 22                        38
+       3 D: 39                        51
+
+     Color: Math.floor(n/13);
+     number: n % 13 -->
+
+<!-- Wash cards-->
+
+<script>
+   var m = ['A', 'B', 'C', 'D'];
+   var cards = [];
+   var howmany = 52;
+   for (var i = 0; i < howmany; i++){
+     cards[i] = i + 1;
+   }
+   document.write('Original Series: <br>', cards + '<br><br>');
+   
+  var t;
+  for (var i = 0; i < cards.length; i++){
+       var n = Math.floor(Math.random()*(howmany - 1)); 
+       t = cards[i];
+       cards[i] = cards[n];
+       cards[n] = t;
+  }
+  document.write('After Wash: <br>', cards + '<br>');
+
+  for (var i = 0; i < 4; i++){
+    document.write('<br> Player Number #'+(i+1) + ' <br>');
+    for(j = 0; j < 13; j++){
+      var n = i * 13 + j;
+      document.write((j + 1) + ':  ' + m[Math.floor(cards[n]/13)]);
+      // document.write((cards[n] % 13 + 1) + '<br>');
+      document.write((cards[n] % 13 ) + '<br>');
+    }
+  }
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+html,body{
+  color: black;
+  font-size: 24px;
+}
+#inputnum{
+  color: #555;
+  font-size: 20px;
+}
+.ans{
+  color: #11C177;
+  font-size: 24px;
+  display: inline-block;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>info-class-28</title>
+    <style>
+    body{
+      font-size: 22px;
+      /* font-weight: bold; */
+    }
+    .mytable, .mytable tr, .mytable td{
+      border: 1px solid black;
+    }
+    .mytable{
+      background: radial-gradient(circle, #999, #842);
+      border-collapse: collapse;
+    }
+    .mytable td{
+      width: 40px;
+      height: 40px;
+      text-align: center;
+    }
+    </style>
+    <h5>Matrix Multiplication</h5>
+</head>
+<!--
+     a is 4x4 matrix;
+     b is 4x3 matrix;
+     c = axb
+-->
+<body>
+
+<script>
+document.write("Matrix a[ ][ ]<br>");
+var a = [];
+//uni matrix
+// a[0] = [1, 1, 1, 1];
+// a[1] = [1, 1, 1, 1];
+// a[2] = [1, 1, 1, 1];
+// a[3] = [1, 1, 1, 1];
+// Random numbers:
+for(var i = 0; i < 4; i++){
+  a[i] = [];
+  for(var j = 0; j < 4; j++){
+     a[i][j] = Math.floor(Math.random()*11);
+  }
+}
+document.write("<table class = 'mytable'>");
+for (var i = 0; i < 4; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 4; j++){
+    document.write("<td>" + a[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+
+
+document.write("<br>Matrix b[ ][ ]<br>");
+var b = [];
+//uni matrix
+// b[0] = [1, 1, 1];
+// b[1] = [1, 1, 1];
+// b[2] = [1, 1, 1];
+// b[3] = [1, 1, 1];
+for(var i = 0; i < 4; i++){
+  b[i] =[];
+  for(var j = 0; j < 3; j++){
+     b[i][j] = Math.floor(Math.random()*11);
+  }
+}
+document.write("<table class = 'mytable'>");
+for (var i = 0; i < 4; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 3; j++){
+    document.write("<td>" + b[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+
+
+document.write("<br>Matrix c[ ][ ]<br>");
+// Initialization for c[][];
+var c = [];
+for(var i = 0; i < 4; i++){
+  c[i] = [];
+  for(var j = 0; j < 3; j++){
+    c[i][j] = 0;
+  }
+}
+// Multiplication;
+for(var i = 0; i < 4; i++){
+  for(var j = 0; j < 3; j++){
+    for(var k = 0; k < 4; k++){
+       c[i][j] = c[i][j] + a[i][k]*b[k][j];
+    }
+  }
+}
+document.write("<table class = 'mytable'>");
+for (var i = 0; i < 4; i++){
+  document.write("<tr>");
+  for(var j = 0; j < 3; j++){
+    document.write("<td>" + c[i][j] + "</td>");
+  }
+    document.write('</tr>');
+}
+document.write("</table>");
+
+</script>
+</body>
+</html>

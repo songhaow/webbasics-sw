@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>jQuery仿途牛多样式图片轮播-站长素材</title>
+	<!-- 页面css样式 -->
+	<link rel="stylesheet" href="css/tuniu.css" />
+	<!-- js文件 -->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/index.js"></script>
+
+		<style type="text/css">
+		*{list-style: none;text-decoration: none;margin:0;padding:0;}
+		.safety{width: 1100px;height:70px;margin: 0 auto;box-shadow: inset 0 -0.3px 0px #2D2D2D;}
+		.logo{float: left;margin-left: 45px;}
+		.head0{float: left;margin-left: 260px;width: 300px;}
+		.head1 li{float: left;position: relative;margin-left: 10px;}
+		.head1 li p{position: absolute;top: 70px;left:0;width: 56px;height:145px;background-color: #2d2d2d;display: none;z-index: 10;}
+		.head1 a{font: 18px/2 微软雅黑;}
+		.head1 li:hover{background-color: #2d2d2d;}
+		.head1 li p a,.head2 a{display: block;font: 12px/2 宋体;padding: 0 6px;color: #ababab;width: auto;}
+		.head1 li:hover p{display: block;}
+		.head1 li p a:hover{color: #ffba00;}
+		.head1 a{color: #000;width: 56px;display: block;text-align: center;line-height: 70px;}
+		.head1 a:hover{background-color: #2d2d2d;color: #fff;}
+		.head2{float: left;margin-left:165px;margin-top: 16px;}
+		.head2 a{display: block;float: left;padding-top: 7px;}
+		.input_1{height: 30px;border-radius:5px;float: left;}
+		.content p img{width: 1100px;}
+		.footer{width: 100%;height: 280px;background-color: #191919;}
+		.footer1 li a{font: 12px/2 宋体 ;color: #ABABAB;}
+		.footer1 li a:hover{color: aliceblue;}
+		.footer1 ul{padding-top: 45px;float: left;}
+		.footer_down{margin-left: 400px;margin-top: 20px;}
+		.footer_down a{font: 12px/2 宋体;color: #FFFFFF;}
+		.footer_down span{font: 12px/2 宋体;color: #FFFFFF;}
+		.footer_down a:hover{color: #ABABAB;}
+		</style>
+	</head>
+
+	<body>
+		<div class="head safety">
+			<div class="logo" ><img src="img/logo_1.png"/></div>
+			<div class="head0">
+			<ul class="head1">
+				<li><a href="二级页面.html">首页</a></li>
+				<li><a href="#">男子</a>
+					<p>
+				  <a href="#">男鞋</a>
+				  <a href="#">羽绒</a>
+				  <a href="#">运动鞋</a>
+				  <a href="#">运动服</a>
+				  <a href="#">健身</a>
+				  <a href="#">跑步</a>
+				  </p>
+				</li>
+				<li><a href="#">女子</a>
+					<p>
+				  <a href="#">女鞋</a>
+				  <a href="#">羽绒</a>
+				  <a href="#">运动鞋</a>
+				  <a href="#">运动服</a>
+				  <a href="#">健身</a>
+				  <a href="#">跑步</a>
+				  </p>
+				</li>
+				<li><a href="#">定制</a></li>
+			</ul>
+			</div>
+
+			<div class="head2">
+			  <form action="form_action.asp" method="get"><a href="#">搜索</a>
+          <input class="input_1" type="text" name="myname">
+        </form>
+		  </div>
+
+		</div>
+
+		<style>
+		body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+		li, dl, dt, dd, form, a, fieldset, input, th, td
+		{margin: 0; padding: 0; border: 0; outline: none;list-style-type: none;overflow-x:none  }
+		body{line-height: 1;font-size: 88% ;font-family: "微软雅黑"}
+		h1, h2, h3, h4, h5, h6{font-size: 100%; margin: 0 ;font-weight: 400;padding:0;}
+		ul, ol{list-style: none;}
+		a{color:#404040;text-decoration: none;}
+		</style>
+
+		<div class="center">
+	 	<div class="center_top">
+	  	<!-- <==========================================================> -->
+					  <!-- 轮播图开始区域 -->
+	 	<!-- <div id="bannar"> -->
+		   <div class="content_middle">
+			  <div class="common_da">
+					<a class="common btnLeft"href="javascript:;"></a>
+					<a class="common btnRight"href="javascript:;"></a>
+			  </div>
+
+			   <ul>
+				  <li style="background:url(img/banner_11.png) no-repeat center center;opacity: 100;filter: alpha(opacity=1);"></li>
+				  <li style="background:url(img/banner_12.png) no-repeat center center;"></li>
+				  <li style="background:url(img/banner_13.png) no-repeat center center;"></li>
+				  <li style="background:url(img/banner_14.png) no-repeat center center;"></li>
+				  <li style="background:url(img/banner_15.png) no-repeat center center;"></li>
+				  <li style="background:url(img/banner_16.png) no-repeat center center;"></li>
+			   </ul>
+
+				<div class="table">
+					<a class="small_active"href="javascript:;">鞋子面料</a>
+					<a href="javascript:;">查看详情</a>
+					<a href="javascript:;">点击购买</a>
+					<a href="javascript:;">鞋子底料</a>
+					<a href="javascript:;">制作工艺</a>
+					<a href="javascript:;">新款报到</a>
+				</div>
+		   </div>
+		 </div>
+   </div>
+
+  <div class="content safety" style="box-shadow:none; height: 1400px;">
+	  <a href="#"><img src="img/foot_15.png"/></a>
+	  <p><a href="#"><img src="img/foot_17.png"/></a></p>
+	  <div><a href="#"><img src="img/conter_13.png"/></a></div>
+	  <div style="float: left;"><img style="width: 500px;height: 300px;" src="img/foot_13.png"/></div>
+	  <div style="float: right;"><img style="width: 500px;height: 300px;" src="img/foot_14.png"/></div>
+	  <div style="float: left;"><a href="#"><img src="img/foot_22.png"/></a></div>
+	  <div style="float: right"><a href="#"><img src="img/foot_21.png"/></a></div>
+	  <p><a href="#"><img src="img/foot_23.png"/></a></p>
+	<div style="float: left;margin-left: 100px;"><a href="#"><img src="img/conter_1.png"/></a></div>
+	<div style="float: left;margin-left: 80px;"><a href="#"><img src="img/conter_12.png"/></a></div>
+  </div>
+  <br><br><br>
+
+    <div class="footer">
+			<div class="footer1" style="height: 220px; width: 1100px; margin: 0 auto;">
+				<ul>
+					<li><a href="#">电子礼品卡</a></li>
+					<li><a href="#">附近商店</a></li>
+					<li><a href="#">订阅电子邮件</a></li>
+					<li><a href="#">注册NIKE会员</a></li>
+				</ul>
+				<ul style="margin-left: 80px;">
+					<li><a href="#">获取帮助</a></li>
+					<li><a href="#">订单状态</a></li>
+					<li><a href="#">配送方式</a></li>
+					<li><a href="#">退换货</a></li>
+					<li><a href="#">付款选项</a></li>
+					<li><a href="#">联系我们</a></li>
+				</ul>
+				<ul style="margin-left: 80px;">
+					<li><a href="#">新闻</a></li>
+					<li><a href="#">关于NIKE</a></li>
+					<li><a href="#">投资者</a></li>
+					<li><a href="#">招贤纳士</a></li>
+					<li><a href="#">新品预览</a></li>
+				</ul>
+				<p style="float: right;"><a href="#"><img src="img/foote_1.png"/></a></p>
+			</div>
+			<br>
+			<div class="footer_down">
+					<a href="#">隐私权保护政策</a><span>|</span><a href="#">使用条款</a><span>|</span>
+					<a href="#">沪ICP备11025349号-3</a><span>|</span><span>©ASUSTeK Computer Inc. All rights 								reserved.</span>
+			</div>
+	  </div>
+
+	</body>
+</html>

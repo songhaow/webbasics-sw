@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block body %} 
+
+    <h2>Purchace photo, price based on quantity</h2>
+    <ul id = 'pricelist' style="list-style-type:square;">
+      <li>Quantity <=10:        100NTD/ea </li>
+      <li>Quantity <=50:        95NTD/ea </li>
+      <li>Quantity <=100:       90NTD/ea </li>
+      <li>Quantity <=1000:      85NTD/ea </li>
+      <li>Quantity >1000:       80NTD/ea </li>
+    </ul>
+    <hr>
+    Quantity of photos: <input id = 'amount'><br>
+    Total price: <div id = 'total'></div>
+
+    <script type="text/javascript">
+  
+      var total;
+    
+      document.getElementById("amount").onchange = function(event) {
+         var quantity = event.target.value;
+         console.log('I am console');
+     
+         if (quantity <= 10){
+           total = quantity*100;
+           document.getElementById("total").innerHTML=(total+" NTD");
+           }
+         else if(quantity <= 50){
+           total = quantity*95;
+           document.getElementById("total").innerHTML=(total+" NTD");
+           }
+         else if(quantity <= 100){
+           total = quantity*90;
+           document.getElementById("total").innerHTML=(total+" NTD");
+           }
+         else if(quantity <= 1000){
+             total = quantity*85;
+             document.getElementById("total").innerHTML=(total+" NTD");
+            }
+         else {
+           total = quantity*80;
+           document.getElementById("total").innerHTML=(total+" NTD");
+           }
+      }
+    </script>
+
+{% endblock %}

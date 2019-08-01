@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<!-- <style>
+
+  table{
+    border-collapse: collapse;
+    background-color: #EEE4E1;
+    margin:20 auto;
+  }
+
+  #table, #table tr, #table td{
+    border: 1px solid black;
+  }
+
+  #table td{
+    width: 60px;
+    text-align: center;
+  }
+
+  .box{
+    min-width: 400px;
+    padding: 20px;
+    background-color: #FFC300;
+    display: inline-block;
+  }
+
+  button{
+    margin-left: 20px;
+  }
+
+</style>
+  </head>
+
+  <body> -->
+   <h2>Automatically calculate the collums based on an input integer</h2>
+    <form name = 'myform'>
+       Number of Collums: <input type='text' id='fnotext' value = ' '><br>
+       <button type = 'button' onclick = "disply()">Disply table</button>
+    </form>
+
+      <!-- <fieldset class ='box'> -->
+      <div>
+         <legend id='fno'> Number of Collums </legend>
+         <table id='table'></table>
+      </div>
+      <!-- </fieldset> -->
+
+  </body>
+
+  <script type="text/javascript">
+      var oForm, number;
+      oForm = document.forms['myform'];
+
+      // <Automatically calculate the collums -->
+      function disply(){
+        var fno = parseInt(document.getElementById('fnotext').value);
+        console.log('fno:', fno);
+        if(fno < 0){fno = 2};
+          document.getElementById('fno').innerHTML= "Number of Collums: " + fno;
+
+        var html = " ";
+
+        for (var i=1; i<100; i++){
+          if(i%fno == 1){
+            html = html + "<tr>";
+          }
+          html = html + "<td>" + i + "</td>";
+          if (i%fno == 0){
+            html = html + "</tr>";
+          }
+        }
+        document.getElementById("table").innerHTML=(html);
+      }
+  
+  </script>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <title>info-class-21</title>
+</head>
+
+<body>
+<!-- 1D Binary Search, 100 numbers between 1 to 30 -->
+<!-- [4 28 26 32 25 30  ,,, ]  -->
+<!-- please find how many repeatitions for a particular number -->
+
+<script>
+// Build original array
+var m =[];
+var arraylength = 100;
+var maxvalue = 30;
+for(var i = 0; i < arraylength; i++){
+  m[i] = Math.floor(Math.random()*maxvalue+1);
+}
+document.write('Original Array:<br>' + m +'<br><br>');
+
+// Sortering:
+for (var i = 0; i <m.length-1; i++){
+  for (var j = 0; j < m.length-i; j++){
+    if (m[j] > m[j+1]) {
+      var m1;
+      m1 = m[j];
+      m[j] = m[j+1];
+      m[j+1] = m1;
+    }
+  }
+}
+document.write('After Sortering: ' + m + '<br><br>');
+
+// Find how many duplications for a particular number
+document.write('Find out repetitions: <br>');
+var n = m[0], c = 1;
+for(var i = 1; i < m.length - 1; i++){
+   if ( n != m[i] ){
+      document.write( n + ': ' + c + ' Times <br>');
+      n = m[i];
+      c = 1;
+   }
+   else {
+      c ++;
+   }
+}
+
+document.write(n + ':' + c + ' Times <br>');
+
+</script>
+</body>
+</html>
