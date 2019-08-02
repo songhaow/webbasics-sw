@@ -5,6 +5,14 @@ app=Flask(__name__)
 def index():
     return render_template("home.html")
 
+@app.route("/books")
+def books():
+   return render_template("books.html")
+
+@app.route("/shoes")
+def shoes():
+   return render_template("shoes.html")
+
 @app.route("/examples")
 def examples():
     return render_template('examples.html')
@@ -32,7 +40,7 @@ def infoclass05():
 
 @app.route("/infoclass06")
 def infoclass06():
-   return render_template("info-class-06.html")  
+   return render_template("info-class-06.html")
 
 
 @app.route("/infoclass07")
@@ -57,7 +65,7 @@ def infoclass011():
 
 @app.route("/infoclass12")
 def infoclass12():
-   return render_template("info-class-12.html") 
+   return render_template("info-class-12.html")
 
 @app.route("/infoclass13")
 def infoclass13():
@@ -73,7 +81,7 @@ def infoclass15():
 
 @app.route("/infoclass16")
 def infoclass16():
-   return render_template("info-class-16.html")  
+   return render_template("info-class-16.html")
 
 @app.route("/infoclass17")
 def infoclass17():
@@ -97,7 +105,7 @@ def infoclass021():
 
 @app.route("/infoclass22")
 def infoclass22():
-   return render_template("info-class-22.html") 
+   return render_template("info-class-22.html")
 
 @app.route("/infoclass23")
 def infoclass23():
@@ -113,19 +121,11 @@ def infoclass25():
 
 @app.route("/infoclass26")
 def infoclass26():
-   return render_template("info-class-26.html")  
+   return render_template("info-class-26.html")
 
 @app.route("/infoclass27")
 def infoclass27():
    return render_template("info-class-27.html")
-
-@app.route("/books")
-def books():
-   return render_template("books.html")
-
-@app.route("/shoes")
-def shoes():
-   return render_template("shoes.html")
 
 if __name__ == "__main__":
    # app.run(host='0.0.0.0', port=5000, debug=True)
