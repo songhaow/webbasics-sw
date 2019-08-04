@@ -7,11 +7,11 @@ def index():
 
 @app.route("/books")
 def books():
-   return render_template("books.html")
+   return render_template("books/books.html")
 
 @app.route("/shoes")
 def shoes():
-   return render_template("shoes.html")
+   return render_template("shoes/shoes.html")
 
 @app.route("/examples")
 def examples():
